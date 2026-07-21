@@ -1,0 +1,356 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Jost', 'Fira Sans', 'Barlow', 'Roboto', sans-serif;
+  --font-heading: 'Barlow', 'Jost', sans-serif;
+  --color-brand-emerald: #123328;
+  --color-brand-emerald-dark: #0a1f18;
+  --color-brand-emerald-light: #1c4a3b;
+  --color-brand-gold: #c5a059;
+  --color-brand-gold-bright: #d4af37;
+  --color-brand-gold-light: #e5c175;
+  --color-mex-navy: #123328;
+  --color-mex-teal: #123328;
+  --color-mex-gold: #c5a059;
+  --color-mex-dark: #0a1f18;
+  --color-mex-light-bg: #f5f8fa;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #475569;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  perspective: 1200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Barlow', 'Jost', sans-serif;
+}
+
+/* Scroll Triggered Reveal Animations (Slow & Luxurious Transitions) */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-bottom {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 1.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-zoom-in {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 1.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-in {
+  opacity: 0;
+  transition: opacity 1.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity;
+}
+
+/* Active Trigger States */
+.reveal-fade-up.active,
+.reveal-fade-bottom.active,
+.reveal-fade-left.active,
+.reveal-fade-right.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.reveal-zoom-in.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-fade-in.active {
+  opacity: 1;
+}
+
+/* Entrance Keyframes (Slow 1.8s) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-zoom-in {
+  animation: zoomIn 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* 3D Perspective & Layering Utility Classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+
+/* 3D Hover Card Effects (No Shadow) */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease;
+  will-change: transform;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(3deg) rotateY(-3deg) scale(1.02);
+}
+
+/* Reverse 3D Hover Tilt for Contrast (No Shadow) */
+.card-3d-alt {
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-3d-alt:hover {
+  transform: translateY(-8px) rotateX(-3deg) rotateY(3deg) scale(1.02);
+}
+
+/* Pop-out child element when parent card is hovered */
+.card-3d .pop-out, .card-3d-alt .pop-out {
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-3d:hover .pop-out, .card-3d-alt:hover .pop-out {
+  transform: translateZ(30px) scale(1.05);
+}
+
+/* Continuous Pulse Glow & Border Glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(197, 160, 89, 0.4);
+  }
+  50% {
+    border-color: rgba(197, 160, 89, 0.95);
+  }
+}
+
+.animate-border-glow {
+  animation: borderGlow 5s ease-in-out infinite;
+}
+
+/* Glowing Button Ripple Hover */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 3D Continuous Floating Keyframes */
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotateX(3deg) rotateY(-4deg);
+  }
+  50% {
+    transform: translateY(-16px) rotateX(-2deg) rotateY(3deg);
+  }
+  75% {
+    transform: translateY(-8px) rotateX(4deg) rotateY(2deg);
+  }
+}
+
+.animate-float-3d {
+  animation: float3d 10s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes float3dReverse {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(14px) rotateX(-5deg) rotateY(5deg);
+  }
+}
+
+.animate-float-3d-reverse {
+  animation: float3dReverse 12s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* 3D Coin/Badge Spin Effect (Slow 25s) */
+@keyframes spin3dSlow {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.animate-spin-3d {
+  animation: spin3dSlow 25s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* 3D Shimmer Metallic Text (Slow 8s) */
+.gold-shimmer {
+  background: linear-gradient(90deg, #c5a059 0%, #fff7d6 50%, #c5a059 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmerGold 8s linear infinite;
+}
+
+@keyframes shimmerGold {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Infinite Marquee Animation for Partners (Slow 35s) */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5a059;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #123328;
+}
