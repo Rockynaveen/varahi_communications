@@ -20,7 +20,7 @@ export const ApplyLoanPage: React.FC<ApplyLoanPageProps> = ({ onNavigateHome, on
         {/* Background Subtle Accent Pattern */}
         <div className="absolute inset-0 bg-radial from-[#c5a059]/10 to-transparent pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           
           <button
             onClick={onNavigateHome}

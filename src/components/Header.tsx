@@ -54,22 +54,20 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, onNavigateApply,
       <header
         className={`sticky top-0 w-full z-50 font-['Barlow'] transition-all duration-300 ${
           isSticky
-            ? 'bg-white/95 backdrop-blur-md shadow-md py-1 border-b border-slate-200/80'
-            : 'bg-white shadow-xs py-2'
+            ? 'bg-white/95 backdrop-blur-md shadow-md py-0 border-b border-slate-200/80'
+            : 'bg-white shadow-xs py-0'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20 transition-all duration-300">
             
             {/* Logo Image */}
-            <div className="flex-shrink-0 flex items-center py-1">
-              <button onClick={handleHomeClick} className="flex items-center text-left cursor-pointer">
+            <div className="flex-shrink-0 flex items-center h-full p-0 m-0">
+              <button onClick={handleHomeClick} className="flex items-center text-left cursor-pointer h-full p-0 m-0">
                 <img
                   src="/images/logo-vc.png"
                   alt="Varahi Communications Logo"
-                  className={`w-auto object-contain transition-all duration-300 ${
-                    isSticky ? 'h-12 sm:h-14 lg:h-15' : 'h-15 sm:h-17 lg:h-18'
-                  }`}
+                  className="h-full w-auto object-contain p-0 m-0 transition-all duration-300"
                 />
               </button>
             </div>

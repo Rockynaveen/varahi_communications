@@ -32,7 +32,7 @@ export const ApplyLoanForm: React.FC = () => {
 
   return (
     <section id="apply-loan" className="py-10 bg-[#f5f8fa] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -48,7 +48,7 @@ export const ApplyLoanForm: React.FC = () => {
         </div>
 
         {/* Form Main Container Card */}
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-[#c5a059]/30">
+        <div className="w-full bg-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-[#c5a059]/30">
           
           {/* Toast feedback */}
           {submitted ? (
