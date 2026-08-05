@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateHome, onNavigateApply,
                 <img
                   src="/images/logo-vc.png"
                   alt="Varahi Communications Logo"
-                  className="h-14 w-auto object-contain bg-white p-2 rounded-xl border border-[#c5a059]/40 shadow-lg max-w-[250px]"
+                  className="h-10 sm:h-11 w-auto object-contain bg-white p-2 rounded-xl border border-[#c5a059]/40 shadow-lg max-w-[220px]"
                 />
               </button>
             </div>

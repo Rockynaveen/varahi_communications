@@ -67,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, onNavigateApply,
                 <img
                   src="/images/logo-vc.png"
                   alt="Varahi Communications Logo"
-                  className="h-full w-auto object-contain p-0 m-0 transition-all duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain p-0 m-0 transition-all duration-300"
                 />
               </button>
             </div>
@@ -151,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, onNavigateApply,
               <img
                 src="/images/logo-vc.png"
                 alt="Varahi Communications Logo"
-                className="h-12 sm:h-14 w-auto object-contain"
+                className="h-9 sm:h-10 w-auto object-contain"
               />
             </button>
             <button
